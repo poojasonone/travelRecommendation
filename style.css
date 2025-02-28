@@ -1,0 +1,31 @@
+#toplogodiv {
+  background-color:  black;
+  padding-bottom: 0.5cm;
+  margin-left:-0.5cm;
+  margin-right:-0.5cm;
+  margin-top:-0.5cm;
+  padding-top: 1cm;
+  padding-bottom: 0.5cm;
+  height: 2mm;
+  color: white;
+ }
+
+ .Company_name {
+  float: left;
+  padding-left: 2cm;
+  font-style: italic;
+  font-size: 12px;
+}
+
+.topdiv {
+  float: right;
+  padding-right: 1cm;
+}
+
+.topmenu {
+  color: white;
+  margin:5px;
+  padding: 10px;
+  font-size:10px;
+  text-decoration:none;
+}
