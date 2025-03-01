@@ -14,18 +14,25 @@
   float: left;
   padding-left: 2cm;
   font-style: italic;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .topdiv {
-  float: right;
+  float: center;
   padding-right: 1cm;
+  padding-left: 1cm;
+}
+
+.searchdiv{
+    float : right;
+    padding-left : 1cm;
 }
 
 .topmenu {
   color: white;
   margin:5px;
   padding: 10px;
-  font-size:10px;
+  font-size:12px;
+  font-style: normal;
   text-decoration:none;
 }
