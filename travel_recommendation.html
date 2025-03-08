@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Travel Bloom</title>
+    <link rel="stylesheet" href="./style.css"/>
+    <script src="./travel_recommendation.js"></script>
+  </head>
+  
+  <body>
+    <div class="container">
+    <nav>
+        <div class="travel_logo">
+            <a><img src="C:\Anvi\javascrpit course\travelRecommendation\travelLogo.jpg" alt="logo"><span style="margin: 20px;">TravelBloom</span> </a>
+           
+        </div>
+        <ul class="menu">
+             
+           <li><a href="" onclick="loadPage(event,'home.html')">Home</a></li>
+            <li><a href="" onclick="loadPage(event,'aboutus.html')">About us</a></li>
+            <li><a href="" onclick="loadPage(event,'contactus.html')">Contact us</a></li>
+        </ul>
+        
+        <div class="search">
+            <form>
+                <input type="text" placeholder="Enter a destination   " name="search">
+                <button type="submit"><i class="fa fa-search">Search</i></button>
+                <button type="reset">Clear</button>
+            </form>
+        </div>
+    </nav>
+    
+    <div class="social_icons">
+        <ul>
+            <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+            <li><a><ion-icon name="logo-youtube"></ion-icon></a></li>
+        </ul>
+    </div> 
+
+    <div class="content" id="content-area">
+        <h1>EXPLORE DREAM DESTINATION</h1>
+        <p>Your gateway to discovering the most enchanting and awe-inspiring locations around the globe. Whether you seek the tranquility of pristine beaches, the adventure of rugged mountains, or the culture of bustling cities, our platform curates the ultimate travel experiences to fulfill your wanderlust. Join us on a journey of exploration and discovery as we uncover the world's hidden gems and help you create unforgettable memories. Start your adventure with us today and turn your travel dreams into reality.</p>
+    </div>
+    
+    <script>
+        function loadPage(event, page) {
+            event.preventDefault(); 
+            fetch(page)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Page not found');
+                    }
+                    return response.text();
+                })
+                .then(data => document.getElementById("content-area").innerHTML = data)
+                .catch(error => console.error('Error loading page:', error));
+        }
+    </script>
+
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </body>
+</html>

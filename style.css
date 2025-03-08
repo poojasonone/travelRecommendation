@@ -1,0 +1,182 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('bg3.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 10px, 8%;
+    overflow: hidden;
+    display: flex;
+}
+
+nav{
+    width: 100%;
+    height: 75px;
+    display: flex;
+    /* padding: 0px 50px; */
+    background-color: black;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    
+}
+
+nav a{
+    color: white;
+}
+
+.travel_logo{
+    flex: 1;
+}
+
+a{
+    text-decoration: none;
+}
+
+.travel_logo img{
+    /* height: 40px ; */
+    width: 50px;
+    margin-left: 30px;
+}
+
+.travel_logo a{
+    font-style: italic;
+    font-size: 25px;
+    font-weight: bold;
+    /* color: white; */
+    display: flex;
+    align-items: center;
+    /* margin-left: 60px; */
+}
+
+.menu{
+    width: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    list-style: none;
+    margin-right: 50px;
+}
+
+.menu li{
+    margin-left: 30px;
+}
+
+.menu li a{
+    font-size: 19px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    color:#fff;
+}
+
+.menu li a:hover{
+    color: grey;
+}
+
+.search{
+    border-radius: 30px;
+    border-color: white;
+    background-color: white;
+    height: 50px;
+    /* width: 600px; */
+    display: flex;
+    align-items: center;
+    margin-right: 0;
+    flex-wrap: wrap;
+}
+
+.search form{
+    display: flex;
+    margin: 0;
+}
+
+.search input{
+    padding: 10px;
+    border: 1px solid whitesmoke;
+    outline: none;
+    font-size: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    /* border-radius: 5px; */
+}
+
+.search button{
+    padding: 10px;
+    border: 1px solid black;
+    outline: none;
+    font-size: 15px;
+    /* margin-left: 20px; */
+    background-color: rgb(58, 111, 192);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 20px;
+    color: white;
+}
+
+.search button:hover{
+    color: black;
+}
+
+.content{
+    
+    max-width: 800px;
+}
+
+.content h1{
+    margin-left: 40%;
+    margin-top: 200px;
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.content p{
+    margin-left: 40%;
+    font-size: 20x;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+/* #results{
+    float: right;
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 90%;
+    overflow-y: auto;
+} */
+
+.social_icons{
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.social_icons a{
+    margin-left: 30%;
+    display: block;
+    text-align: center;
+    padding: 16px;
+    transition: alt 0.3 ease;
+    color: white;
+    font-size: 30px;
+}
+
+.icon{
+    margin-bottom: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.icon i {
+    margin-right: 10px;
+}
+
