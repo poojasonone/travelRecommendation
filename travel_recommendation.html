@@ -3,14 +3,14 @@
   <head>
     <title>Travel Bloom</title>
     <link rel="stylesheet" href="./style.css"/>
-    <script src="./travel_recommendation.js"></script>
+    
   </head>
   
   <body>
     <div class="container">
     <nav>
         <div class="travel_logo">
-            <a><img src="C:\Anvi\javascrpit course\travelRecommendation\travelLogo.jpg" alt="logo"><span style="margin: 20px;">TravelBloom</span> </a>
+            <a><img src="./travelLogo.jpg" alt="logo"><span style="margin: 20px;">TravelBloom</span> </a>
            
         </div>
         <ul class="menu">
@@ -20,14 +20,18 @@
             <li><a href="" onclick="loadPage(event,'contactus.html')">Contact us</a></li>
         </ul>
         
-        <div class="search">
-            <form>
-                <input type="text" placeholder="Enter a destination   " name="search">
-                <button type="submit"><i class="fa fa-search">Search</i></button>
-                <button type="reset">Clear</button>
-            </form>
-        </div>
-    </nav>
+        
+            <div id="searchdiv">
+                <form id="searchform">
+                    <input type="text" placeholder="Enter a destination" name="search" id="search">
+                    <button type="submit" id="btnSubmit">Search</button>
+                    <button type="reset" id="btnReset">Clear</button>
+                </form>
+            </div>
+          </nav>
+    <div id="countryDetails">
+        <!-- Results will appear here -->
+    </div>
     
     <div class="social_icons">
         <ul>
@@ -43,23 +47,42 @@
         <p>Your gateway to discovering the most enchanting and awe-inspiring locations around the globe. Whether you seek the tranquility of pristine beaches, the adventure of rugged mountains, or the culture of bustling cities, our platform curates the ultimate travel experiences to fulfill your wanderlust. Join us on a journey of exploration and discovery as we uncover the world's hidden gems and help you create unforgettable memories. Start your adventure with us today and turn your travel dreams into reality.</p>
     </div>
     
+    
+
     <script>
         function loadPage(event, page) {
-            event.preventDefault(); 
-            fetch(page)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Page not found');
-                    }
-                    return response.text();
-                })
-                .then(data => document.getElementById("content-area").innerHTML = data)
-                .catch(error => console.error('Error loading page:', error));
-        }
+    event.preventDefault(); 
+
+    // Fetch the requested page
+    fetch(page)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Page not found');
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById("content-area").innerHTML = data;
+
+            // Hide search div if navigating to "About Us" or "Contact Us"
+            if (page === 'aboutus.html' || page === 'contactus.html') {
+                document.getElementById("searchdiv").style.display = "none";
+                document.getElementById("countryDetails").style.display = "none";
+            } else {
+                // document.getElementById("searchdiv").style.display = "flex"; // Ensure it is shown on Home
+                // document.getElementById("countryDetails").style.display = "flex";
+                // document.getElementById("search").value = "";
+                window.location.reload();
+            }
+        })
+        .catch(error => console.error('Error loading page:', error));
+}
+
     </script>
 
     </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="./travel_recommendation.js"></script>
     </body>
 </html>

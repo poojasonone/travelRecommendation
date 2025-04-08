@@ -1,0 +1,31 @@
+
+<div class="split-container">
+<div class="contact-form-heading">
+        <h1>CONTACT US</h1>
+        <p>Email: contact@example.com</p>
+    </div>
+    
+<form id="contact-form">
+    <div class="formattr">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" required><br>
+    </div>
+    <div class="formattr">
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" required><br>
+    </div>
+    <div class="formattr">
+        <label for="message"> Message:</label><br>
+        <textarea type="text" id="message"></textarea><br>
+    </div>
+    <div class="formattr">
+        <button type="submit" id="submitbtn">Submit</button><br>
+    </div>
+</form>
+</div>
+<script>
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        alert("Form submitted successfully!");
+    });
+</script>

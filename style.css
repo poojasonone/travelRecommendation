@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+/* Add padding to the body to avoid content overlap with the fixed nav */
+body {
+    padding-top: 75px; /* adjust if your nav height is different */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .container{
     width: 100%;
     min-height: 100vh;
@@ -12,7 +20,7 @@
     background-position: center;
     padding: 10px, 8%;
     overflow: hidden;
-    display: flex;
+    
 }
 
 nav{
@@ -58,7 +66,7 @@ a{
 }
 
 .menu{
-    width: 65%;
+    width: 40%;
     display: flex;
     align-items: center;
     justify-content: right;
@@ -81,7 +89,7 @@ a{
     color: grey;
 }
 
-.search{
+#searchdiv{
     border-radius: 30px;
     border-color: white;
     background-color: white;
@@ -89,26 +97,30 @@ a{
     /* width: 600px; */
     display: flex;
     align-items: center;
-    margin-right: 0;
-    flex-wrap: wrap;
+    margin-right: 20px;
+    flex-wrap: nowrap;
+    width: 500px;
 }
 
-.search form{
+#searchdiv form{
     display: flex;
     margin: 0;
+    width: 100%;
+    justify-content: space-between;
 }
 
-.search input{
+#searchdiv input{
     padding: 10px;
     border: 1px solid whitesmoke;
     outline: none;
     font-size: 15px;
     margin-left: 20px;
     margin-right: 20px;
+    flex-grow: 1;
     /* border-radius: 5px; */
 }
 
-.search button{
+#searchdiv button, #submitbtn{
     padding: 10px;
     border: 1px solid black;
     outline: none;
@@ -121,38 +133,92 @@ a{
     color: white;
 }
 
-.search button:hover{
+#searchdiv button:hover{
     color: black;
 }
 
+
+
 .content{
-    
-    max-width: 800px;
+    float: left;
+    margin-left: 10%;
+    margin-top: 10%;
 }
 
 .content h1{
-    margin-left: 40%;
-    margin-top: 200px;
+    /* margin-left: 40%; */
     font-size: 40px;
     font-weight: 600;
     margin-bottom: 25px;
 }
 
 .content p{
-    margin-left: 40%;
+    /* margin-left: 40%; */
+    max-width: 600px;
     font-size: 20x;
     margin-bottom: 25px;
     font-weight: bold;
 }
 
-/* #results{
-    float: right;
-    width: 50%;
+#our-team {
+    text-align: center;
+    padding: 50px;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    color: white;
+    max-width: 80%;
+    overflow: hidden;
+}
+
+.team-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+}
+
+.team-member {
+    background: rgba(255, 255, 255, 0.1);
     padding: 20px;
-    box-sizing: border-box;
-    height: 90%;
-    overflow-y: auto;
-} */
+    border-radius: 10px;
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-member:hover {
+    transform: scale(1.05);
+}
+
+.team-member img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.team-member h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+.team-member p {
+    font-size: 0.9em;
+    color: #ddd;
+}
+
+.role {
+    display: inline-block;
+    background-color: rgb(58, 111, 192);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
 
 .social_icons{
     position: fixed;
@@ -180,3 +246,157 @@ a{
     margin-right: 10px;
 }
 
+
+
+/* Adjust margins for form elements */
+ .formattr {
+    margin-top: 30px;
+    width: 100%;
+}
+
+/* .contact-container {
+    display: flex;
+    /* justify-content: flex-start;  
+    max-width: 80%;
+    margin:20px auto;
+
+}
+
+
+.form-heading {
+    flex: 1;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+} */
+.contact-form-heading{
+    width: 48%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#contact-form {
+    width: 48%;
+  padding: 20px;
+  box-sizing: border-box;
+    margin: 30px;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    color: white;
+    
+    /* margin: 20px auto; */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.split-container {
+    display: flex;
+    justify-content: space-between; /* space between left and right */
+    margin-top: 50px; /* space below navbar */
+    padding: 20px;
+  }
+
+#countryDetails {
+    margin-top: 80px; /* 50px below nav */
+    float: right;
+    margin-left: auto; /* Align it to the right */
+    margin-right: 20px; /* Add a small margin to right */
+    width: 500px; /* Adjust the width for your results */
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+   
+}
+
+/* Individual result items styling */
+.result-item {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+}
+
+.result-item img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+/* Add responsive behavior */
+@media (max-width: 768px) {
+    #countryDetails {
+        width: 90%; /* Adjust to fit smaller screens */
+        margin-right: 0;
+        margin-left: 5%; /* Adjust for mobile view */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .form-heading,
+    #contact-form {
+        max-width: 100%;
+    }
+
+    .form-heading {
+        text-align: center;
+    }
+}
+
+
+#countryDetails {
+    margin-top: 20px;
+}
+
+.city-details {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.city-details img {
+    width: 200px;
+    height: auto;
+}
+
+.city-details h3 {
+    margin: 10px 0;
+}
+
+/*
+#contact-form label{
+    font-weight: bold;
+    text-align: center;
+    display: block;
+}
+
+#contact-form input,textarea{
+    text-align: left;
+}
+
+#contact-form textarea{
+    height: 40px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#submitbtn{
+    text-align: center;
+    width: 90%;
+}
+
+@media(max-width: 480px){
+    #contact-form{
+        width: 90%;
+    }
+} */
